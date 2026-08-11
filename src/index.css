@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global magazine-like typography */
+:root {
+  --max-width: 1100px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+  font-feature-settings: "rlig" 1;
+}
+
+.dark body {
+  @apply bg-slate-900 text-slate-100;
+}
+
+/* Hero overlay */
+.hero-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Smooth card shadow for magazine feel */
+.card-mag {
+  box-shadow: 0 6px 20px rgba(2,6,23,0.08);
+}
