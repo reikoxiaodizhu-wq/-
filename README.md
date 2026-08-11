@@ -24,3 +24,7 @@ Run locally
 Notes
 - Images use https://source.unsplash.com/ for easy demo (no API key required).
 - Tailwind dark mode uses the `class` strategy.
+
+Updates pushed
+- Bilingual (English + Chinese) content added across data and components.
+- Replaced sample dataset with the full entries from the spec (restaurant list, closures, featured items, resource updates).

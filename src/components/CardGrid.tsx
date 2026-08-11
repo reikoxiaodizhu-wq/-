@@ -8,7 +8,7 @@ function unsplashFor(q?: string, id?: string) {
 
 export default function CardGrid({ items }: { items: Restaurant[] }) {
   if (items.length === 0) {
-    return <div className="text-slate-500">No restaurants found.</div>;
+    return <div className="text-slate-500">No restaurants found. / 未找到餐厅。</div>;
   }
 
   return (
@@ -25,6 +25,7 @@ export default function CardGrid({ items }: { items: Restaurant[] }) {
               <div className="flex items-start justify-between">
                 <div>
                   <h3 className={`text-lg font-semibold ${r.status === 'Permanently Closed' ? 'line-through' : ''}`}>{r.name}</h3>
+                  {r.chineseName ? <div className="text-sm text-slate-500 dark:text-slate-400">{r.chineseName}</div> : null}
                   <p className="text-sm text-slate-500 dark:text-slate-400">{r.city} • {r.country}</p>
                 </div>
                 <div className="text-right">
@@ -33,6 +34,7 @@ export default function CardGrid({ items }: { items: Restaurant[] }) {
                 </div>
               </div>
               <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{r.note}</p>
+              {r.note_cn ? <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{r.note_cn}</p> : null}
               <div className="mt-3 flex gap-2 flex-wrap">
                 {(r.tags || []).map((t) => (
                   <span key={t} className="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-md">{t}</span>
